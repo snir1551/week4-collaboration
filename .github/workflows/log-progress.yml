@@ -20,7 +20,7 @@ jobs:
 
       - name: Log info (commit or PR)
         run: |
-          DATE=$(date '+%Y-%m-%d %H:%M:%S')
+          DATE=$(TZ="Asia/Jerusalem" date '+%Y-%m-%d %H:%M:%S')
 
           if [ "${{ github.event_name }}" == "push" ]; then
             AUTHOR=$(git log -1 --pretty=format:'%an')
